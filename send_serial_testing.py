@@ -1,6 +1,7 @@
 import serial
-arduino = serial.Serial('COM9', baudrate=9600, timeout=1)
 import sys
+
+arduino = serial.Serial('COM9', baudrate=9600, timeout=1)
 
 def write_read(x):
     b = bytes(x, 'utf-8')
@@ -33,3 +34,11 @@ def flashLight(label):
 #         break
 #     value = write_read(num)
 #     print(value) # printing the value
+
+while True:    
+    num = input("Enter a number: ") # Taking input from user
+    if (num == 'quit'):
+        arduino.close()
+        break
+    value = write_read(num)
+    print(value) # printing the value
