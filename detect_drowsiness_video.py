@@ -124,7 +124,7 @@ while True:
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
 		label = "Awake" if eye > withoutEye else "Sleepy"
-		color = (0, 255, 0) if label == "Eye" else (0, 0, 255)
+		color = (0, 255, 0) if label == "Awake" else (0, 0, 255)
 			
 		# include the probability in the label
 		label = "{}: {:.2f}%".format(label, max(eye, withoutEye) * 100)
