@@ -12,6 +12,7 @@ import imutils
 import time
 import cv2
 import os
+from send_serial_testing import flashLight
 
 def detect_and_predict_eye(frame, faceNet, eyeNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -104,6 +105,7 @@ vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
 # loop over the frames from the video stream
+#print("Before the While loop")
 while True:
 	# grab the frame from the threaded video stream and resize it
 	# to have a maximum width of 400 pixels
@@ -125,6 +127,10 @@ while True:
 		# the bounding box and text
 		label = "Awake" if eye > withoutEye else "Sleepy"
 		color = (0, 255, 0) if label == "Awake" else (0, 0, 255)
+		
+		print(label)
+		flashLight(label)
+		#print("Here1")
 			
 		# include the probability in the label
 		label = "{}: {:.2f}%".format(label, max(eye, withoutEye) * 100)
