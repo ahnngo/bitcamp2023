@@ -1,5 +1,6 @@
 import serial
 arduino = serial.Serial('COM9', baudrate=9600, timeout=1)
+import sys
 
 def write_read(x):
     b = bytes(x, 'utf-8')
@@ -11,14 +12,19 @@ def write_read(x):
     return data
 
 def flashLight(label):
-    drowsiness = '1' if label == "Awake" else '0'
+    drowsiness = '0' if label == "Awake" else '1'
 
     # while True:
     #     if drowsiness == 'quit':
     #         arduino.close()
     #         break
-    value = write_read(drowsiness)
-    print(drowsiness)
+    try:
+        value = write_read(drowsiness)
+        print(drowsiness)
+    except KeyboardInterrupt:
+        print("\nCtrl+C pressed. Closing the connection.")
+        arduino.close()
+        sys.exit()
 
 # while True:    
 #     num = input("Enter a number: ") # Taking input from user
