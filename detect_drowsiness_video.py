@@ -1,5 +1,5 @@
 # USAGE
-# python detect_mask_video.py
+# python detect_drowsiness_video.py
 
 # import the necessary packages
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
@@ -13,7 +13,7 @@ import time
 import cv2
 import os
 
-def detect_and_predict_mask(frame, faceNet, maskNet):
+def detect_and_predict_eye(frame, faceNet, eyeNet):
 	# grab the dimensions of the frame and then construct a blob
 	# from it
 	(h, w) = frame.shape[:2]
@@ -25,7 +25,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 	detections = faceNet.forward()
 
 	# initialize our list of faces, their corresponding locations,
-	# and the list of predictions from our face mask network
+	# and the list of predictions from our eye network
 	faces = []
 	locs = []
 	preds = []
@@ -69,7 +69,7 @@ def detect_and_predict_mask(frame, faceNet, maskNet):
 		# faces at the same time rather than one-by-one predictions
 		# in the above `for` loop
 		faces = np.array(faces, dtype="float32")
-		preds = maskNet.predict(faces, batch_size=32)
+		preds = eyeNet.predict(faces, batch_size=32)
 
 	# return a 2-tuple of the face locations and their corresponding
 	# locations
@@ -81,8 +81,8 @@ ap.add_argument("-f", "--face", type=str,
 	default="face_detector",
 	help="path to face detector model directory")
 ap.add_argument("-m", "--model", type=str,
-	default="mask_detector.model",
-	help="path to trained face mask detector model")
+	default="eye_detector.model",
+	help="path to trained face eye detector model")
 ap.add_argument("-c", "--confidence", type=float, default=0.5,
 	help="minimum probability to filter weak detections")
 args = vars(ap.parse_args())
@@ -94,9 +94,9 @@ weightsPath = os.path.sep.join([args["face"],
 	"res10_300x300_ssd_iter_140000.caffemodel"])
 faceNet = cv2.dnn.readNet(prototxtPath, weightsPath)
 
-# load the face mask detector model from disk
-print("[INFO] loading face mask detector model...")
-maskNet = load_model(args["model"])
+# load the face eye detector model from disk
+print("[INFO] loading face eye detector model...")
+eyeNet = load_model(args["model"])
 
 # initialize the video stream and allow the camera sensor to warm up
 print("[INFO] starting video stream...")
@@ -111,23 +111,23 @@ while True:
 	frame = imutils.resize(frame, width=400)
 
 	# detect faces in the frame and determine if they are wearing a
-	# face mask or not
-	(locs, preds) = detect_and_predict_mask(frame, faceNet, maskNet)
+	# face eye or not
+	(locs, preds) = detect_and_predict_eye(frame, faceNet, eyeNet)
 
 	# loop over the detected face locations and their corresponding
 	# locations
 	for (box, pred) in zip(locs, preds):
 		# unpack the bounding box and predictions
 		(startX, startY, endX, endY) = box
-		(mask, withoutMask) = pred
+		(eye, withoutEye) = pred
 
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
-		label = "Awake" if mask > withoutMask else "Sleepy"
-		color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+		label = "Awake" if eye > withoutEye else "Sleepy"
+		color = (0, 255, 0) if label == "Eye" else (0, 0, 255)
 			
 		# include the probability in the label
-		label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
+		label = "{}: {:.2f}%".format(label, max(eye, withoutEye) * 100)
 
 		# display the label and bounding box rectangle on the output
 		# frame

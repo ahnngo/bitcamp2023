@@ -1,5 +1,5 @@
 # USAGE
-# python train_mask_detector.py --dataset dataset
+# python train_eye_detector.py --dataset dataset
 
 # import the necessary packages
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -32,8 +32,8 @@ ap.add_argument("-d", "--dataset", required=True,
 ap.add_argument("-p", "--plot", type=str, default="plot.png",
 	help="path to output loss/accuracy plot")
 ap.add_argument("-m", "--model", type=str,
-	default="mask_detector.model",
-	help="path to output face mask detector model")
+	default="eye_detector.model",
+	help="path to output face eye detector model")
 args = vars(ap.parse_args())
 
 # initialize the initial learning rate, number of epochs to train for,
@@ -138,7 +138,7 @@ print(classification_report(testY.argmax(axis=1), predIdxs,
 	target_names=lb.classes_))
 
 # serialize the model to disk
-print("[INFO] saving mask detector model...")
+print("[INFO] saving eye detector model...")
 model.save(args["model"], save_format="h5")
 
 # plot the training loss and accuracy
