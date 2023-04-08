@@ -1,4 +1,4 @@
- USAGE
+# USAGE
 # python train_mask_detector.py --dataset dataset
 
 # import the necessary packages
