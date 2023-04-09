@@ -2,7 +2,7 @@ int LED = 2;
 int data;
 
 void setup() {
-  Serial.begin(28800);
+  Serial.begin(9600);
   pinMode(LED, OUTPUT);
   digitalWrite(LED, LOW);
 }
