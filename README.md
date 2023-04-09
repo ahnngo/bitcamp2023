@@ -1,4 +1,4 @@
-# BitCamp 2023 - Drowsiness Alarm for Safer Drive
+# BitCamp 2023 - IntelliDrive Drowsiness Detector
 
 ## :key: Prerequisites
 
