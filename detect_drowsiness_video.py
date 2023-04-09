@@ -12,7 +12,9 @@ import imutils
 import time
 import cv2
 import os
-from send_serial_testing import flashLight
+from send_serial_testing import flash_light
+
+counter = 20
 
 def detect_and_predict_eye(frame, faceNet, eyeNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -129,7 +131,16 @@ while True:
 		color = (0, 255, 0) if label == "Awake" else (0, 0, 255)
 		
 		print(label)
-		flashLight(label)
+		print('counter:',counter)
+		if label == "Sleepy":
+			counter -= 1
+			if counter <= 0:
+				flash_light(label)
+				time.sleep(5)
+				counter = 20
+		else:
+			counter = 20
+		#flashLight(label)
 		#print("Here1")
 			
 		# include the probability in the label
