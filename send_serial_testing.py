@@ -1,7 +1,7 @@
 import serial
 import sys
 
-arduino = serial.Serial('COM9', baudrate=115200, timeout=1)
+arduino = serial.Serial('COM9', baudrate=28800, timeout=1)
 
 def write_read(x):
     b = bytes(x, 'utf-8')
