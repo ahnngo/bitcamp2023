@@ -20,22 +20,36 @@ All the dependencies and required libraries are included in the file `requiremen
 ## Installation
 
 1. Clone the repo
+
+'''
 $ git clone https://github.com/ahnngo/bitcamp2023.git
+'''
 
 2. Change your directory to the cloned repo 
+
+'''
 $ cd bitcamp2023
+'''
 
 3. Now, run the following command in your Terminal/Command Prompt to install the libraries required
 
+'''
 $ pip3 install -r requirements.txt
+'''
 
 ## Working
 
 1. Open a terminal. Go into the cloned project directory and type the following command to train the machine learning model:
-$ python3 training.py --dataset dataset
 
-3. To detect drowsiness in drivers using video input, type the following command:
+'''
+$ python3 training.py --dataset dataset
+'''
+
+2. To detect drowsiness in drivers using video input, type the following command:
+
+'''
 $ python3 detect_drowsiness_video.py
+'''
 
 ## Contributors
 
