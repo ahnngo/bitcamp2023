@@ -27,18 +27,3 @@ def flashLight(label):
         arduino.close()
         sys.exit()
 
-# while True:    
-#     num = input("Enter a number: ") # Taking input from user
-#     if (num == 'quit'):
-#         arduino.close()
-#         break
-#     value = write_read(num)
-#     print(value) # printing the value
-
-while True:    
-    num = input("Enter a number: ") # Taking input from user
-    if (num == 'quit'):
-        arduino.close()
-        break
-    value = write_read(num)
-    print(value) # printing the value
