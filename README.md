@@ -6,7 +6,7 @@
 </div>
 
 
-## Files Included
+## :file_folder: Files Included
 
 The repository includes the following important files:
 
@@ -17,11 +17,11 @@ The repository includes the following important files:
 - `requirements.txt`: file containing the required Python libraries for the project.
 - `training.py`: the code for training the machine learning model.
 
-## Prerequisites
+## 🔏 Prerequisites
 
 All the dependencies and required libraries are included in the file `requirements.txt`. You need to have Python 3 installed on your system.
 
-## Installation
+## ⬇️ Installation
 
 1. Clone the repo
 
@@ -41,7 +41,7 @@ $ cd intellidrive-drowsiness-detector
 $ pip3 install -r requirements.txt
 ```
 
-## Working
+## 💻 Working
 
 1. Open a terminal. Go into the cloned project directory and type the following command to train the machine learning model:
 
@@ -55,7 +55,7 @@ $ python3 training.py --dataset dataset
 $ python3 detect_drowsiness_video.py
 ```
 
-## Contributors
+## 👷 Contributors
 
 The following people have contributed to the project:
 
