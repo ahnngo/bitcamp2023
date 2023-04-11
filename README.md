@@ -1,4 +1,4 @@
-# BitCamp 2023 - IntelliDrive Drowsiness Detector
+# IntelliDrive Drowsiness Detector
 
 This repository contains files related to the BitCamp 2023 project for detecting drowsiness in drivers. The project utilizes facial detection techniques to monitor the driver's eyes and alert them when they become drowsy.
 
@@ -22,13 +22,13 @@ All the dependencies and required libraries are included in the file `requiremen
 1. Clone the repo
 
 ```
-$ git clone https://github.com/ahnngo/bitcamp2023.git
+$ git clone https://github.com/ahnngo/intellidrive-drowsiness-detector.git
 ```
 
 2. Change your directory to the cloned repo 
 
 ```
-$ cd bitcamp2023
+$ cd intellidrive-drowsiness-detector
 ```
 
 3. Now, run the following command in your Terminal/Command Prompt to install the libraries required
