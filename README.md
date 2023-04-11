@@ -61,3 +61,8 @@ The following people have contributed to the project:
 
 - [Anh (Alec) Ngo](https://github.com/ahnngo)
 - [Anh Le](https://github.com/anhle1008)
+
+## 💚 Reference
+This project uses some code components of the Face Mask Detection repository by Chandrika Deb:
+
+[Deb, Chandrika. (2020). Face-Mask-Detection.](https://github.com/chandrikadeb7/Face-Mask-Detection)
