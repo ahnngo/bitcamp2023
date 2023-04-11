@@ -1,6 +1,10 @@
-# IntelliDrive Drowsiness Detector
+<h1 align="center">IntelliDrive Drowsiness Detector</h1>
 
-This repository contains files related to the BitCamp 2023 project for detecting drowsiness in drivers. The project utilizes facial detection techniques to monitor the driver's eyes and alert them when they become drowsy.
+<div align= "center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphoto%2Fdrive-safely-written-on-the-road-gm467514262-60373292&psig=AOvVaw1U0jlR4lhXSCsG9zf1MrvC&ust=1681313425654000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCJld6Sov4CFQAAAAAdAAAAABAE"/>
+  <h4>Inspired by the increasing number of accidents caused by drowsy driving, IntelliDrive Drowsiness Detector employs image processing and deep learning to identify driver fatigue and provides a 5-second alert to prevent incidents.
+  </h4>
+</div>
+
 
 ## Files Included
 
