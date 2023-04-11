@@ -1,6 +1,6 @@
 <h1 align="center">IntelliDrive Drowsiness Detector</h1>
 
-<div align= "center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphoto%2Fdrive-safely-written-on-the-road-gm467514262-60373292&psig=AOvVaw1U0jlR4lhXSCsG9zf1MrvC&ust=1681313425654000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCLCJld6Sov4CFQAAAAAdAAAAABAE"/>
+<div align= "center"><img src="https://github.com/ahnngo/intellidrive-drowsiness-detector/blob/main/image/istockphoto-467514262-612x612.jpg"/>
   <h4>Inspired by the increasing number of accidents caused by drowsy driving, IntelliDrive Drowsiness Detector employs image processing and deep learning to identify driver fatigue and provides a 5-second alert to prevent incidents.
   </h4>
 </div>
