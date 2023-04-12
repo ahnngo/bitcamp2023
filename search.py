@@ -12,7 +12,7 @@ args = vars(ap.parse_args())
 API_KEY = "19b3a12dd9c24dc784c8a7bedba51147"
 MAX_RESULTS = 500
 GROUP_SIZE = 50
-URL = "https://api.cognitive.microsoft.com/bing/v7.0/images/search"
+URL = "https://api.bing.microsoft.com/"
 EXCEPTIONS = set([IOError, FileNotFoundError,
 	exceptions.RequestException, exceptions.HTTPError,
 	exceptions.ConnectionError, exceptions.Timeout])
