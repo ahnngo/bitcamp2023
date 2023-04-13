@@ -9,10 +9,10 @@ ap.add_argument("-q", "--query", required=True,
 ap.add_argument("-o", "--output", required=True,
 	help="path to output directory of images")
 args = vars(ap.parse_args())
-API_KEY = "19b3a12dd9c24dc784c8a7bedba51147"
+API_KEY = "123"
 MAX_RESULTS = 500
 GROUP_SIZE = 50
-URL = "https://api.bing.microsoft.com/"
+URL = "https://api.bing.microsoft.com/v7.0/images/search"
 EXCEPTIONS = set([IOError, FileNotFoundError,
 	exceptions.RequestException, exceptions.HTTPError,
 	exceptions.ConnectionError, exceptions.Timeout])
@@ -26,7 +26,7 @@ results = search.json()
 estNumResults = min(results["totalEstimatedMatches"], MAX_RESULTS)
 print("[INFO] {} total results for '{}'".format(estNumResults,
 	term))
-total = 0
+total = 1143
 for offset in range(0, estNumResults, GROUP_SIZE):
 	print("[INFO] making request for group {}-{} of {}...".format(
 		offset, offset + GROUP_SIZE, estNumResults))
@@ -41,18 +41,18 @@ for offset in range(0, estNumResults, GROUP_SIZE):
 			print("[INFO] fetching: {}".format(v["contentUrl"]))
 			r = requests.get(v["contentUrl"], timeout=30)
 			ext = v["contentUrl"][v["contentUrl"].rfind("."):]
-			p = os.path.sep.join([args["output"], "{}{}".format(
-				str(total).zfill(8), ext)])
+			p = os.path.join(args["output"], "{}{}".format(
+				str(total).zfill(8), ext))
 			f = open(p, "wb")
 			f.write(r.content)
 			f.close()
 		except Exception as e:
 			if type(e) in EXCEPTIONS:
-				print("[INFO] skipping: {}".format(v["contentUrl"]))
+				print("[INFO] skipping: {} due to exception: {}".format(v["contentUrl"], str(e)))
 				continue
 		image = cv2.imread(p)
 		if image is None:
-			print("[INFO] deleting: {}".format(p))
+			print("[INFO] deleting: {} (invalid or unsupported image format)".format(p))
 			os.remove(p)
 			continue
 		total += 1
