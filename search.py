@@ -9,7 +9,7 @@ ap.add_argument("-q", "--query", required=True,
 ap.add_argument("-o", "--output", required=True,
 	help="path to output directory of images")
 args = vars(ap.parse_args())
-API_KEY = "123"
+API_KEY = "aaa"
 MAX_RESULTS = 500
 GROUP_SIZE = 50
 URL = "https://api.bing.microsoft.com/v7.0/images/search"
@@ -26,7 +26,7 @@ results = search.json()
 estNumResults = min(results["totalEstimatedMatches"], MAX_RESULTS)
 print("[INFO] {} total results for '{}'".format(estNumResults,
 	term))
-total = 1143
+total = 1999
 for offset in range(0, estNumResults, GROUP_SIZE):
 	print("[INFO] making request for group {}-{} of {}...".format(
 		offset, offset + GROUP_SIZE, estNumResults))
