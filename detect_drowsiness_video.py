@@ -14,7 +14,7 @@ import cv2
 import os
 from send_serial_testing import flash_light
 
-counter = 20
+counter = 10
 
 def detect_and_predict_eye(frame, faceNet, eyeNet):
 	# grab the dimensions of the frame and then construct a blob
@@ -137,9 +137,9 @@ while True:
 			if counter <= 0:
 				flash_light(label)
 				time.sleep(5)
-				counter = 20
+				counter = 10
 		else:
-			counter = 20
+			counter = 10
 		#flashLight(label)
 		#print("Here1")
 			
