@@ -41,6 +41,8 @@ $ cd intellidrive-drowsiness-detector
 $ pip3 install -r requirements.txt
 ```
 
+## :gear: Hardware Set Up
+
 ## 💻 Working
 
 1. Open a terminal. Go into the cloned project directory and type the following command to train the machine learning model:
