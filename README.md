@@ -48,8 +48,10 @@ To run this program, you will need the following components connected to your Ar
 - An LED connected to pin 13 (or the pin number specified by the "LED" variable in the code).
 - A speaker connected to pin 2 (or the pin number specified by the "SPEAKER" variable in the code).
 
+<<<<<<< HEAD
 Make sure to properly connect these components to your Arduino board before uploading the code. Here is a breadboard for reference. 
-![Breadboard](image/Arduino_SetUp-Hardware.PNG)
+![Breadboard2](image/Arduino_SetUp-Hardware.PNG)
+=======
 
 ### Port Setup
 
@@ -80,6 +82,8 @@ $ python3 training.py --dataset dataset
 ```
 $ python3 detect_drowsiness_video.py
 ```
+
+**Note:** Before running detect_drowsiness_video.py, make sure to close the Arduino IDE to avoid any port occupation conflicts.
 
 ## 👷 Contributors
 
