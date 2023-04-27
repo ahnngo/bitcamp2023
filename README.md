@@ -16,6 +16,7 @@ The repository includes the following important files:
 - `eye_detector.model`: the trained machine learning model for detecting eye states.
 - `requirements.txt`: file containing the required Python libraries for the project.
 - `training.py`: the code for training the machine learning model.
+- `search.py`: use Bing Search API to search for training data.
 
 ## 🔏 Prerequisites
 
