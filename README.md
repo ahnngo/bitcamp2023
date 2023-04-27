@@ -41,6 +41,9 @@ $ cd intellidrive-drowsiness-detector
 $ pip3 install -r requirements.txt
 ```
 
+## :gear: Hardware Set Up
+To run this program, the user can use an arduino board or populate a breadboard. In either case, before running, make sure the correct port has been 
+
 ## 💻 Working
 
 1. Open a terminal. Go into the cloned project directory and type the following command to train the machine learning model:
@@ -61,6 +64,7 @@ The following people have contributed to the project:
 
 - [Anh (Alec) Ngo](https://github.com/ahnngo)
 - [Anh Le](https://github.com/anhle1008)
+- [Nelson Xunic](https://github.com/NelsonXunic)
 
 ## 💚 Reference
 This project uses some code components of the Face Mask Detection repository by Chandrika Deb:
