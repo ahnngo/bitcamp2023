@@ -51,7 +51,7 @@ To run this program, you will need the following components connected to your Ar
 
 
 Make sure to properly connect these components to your Arduino board before uploading the code. Here is a breadboard for reference. 
-![Breadboard2](image/Arduino_SetUp-Hardware.PNG)
+![Breadboard2](image/SetUp-ArduinoBoard.PNG)
 
 
 ### Port Setup
