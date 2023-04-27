@@ -49,7 +49,7 @@ To run this program, you will need the following components connected to your Ar
 - A speaker connected to pin 2 (or the pin number specified by the "SPEAKER" variable in the code).
 
 Make sure to properly connect these components to your Arduino board before uploading the code. Here is a breadboard for reference. 
-![Breadboard](image/Hardware-Arduino_SetUp.PNG)
+![Breadboard](image/Arduino_SetUp-Hardware.PNG)
 
 ### Port Setup
 
