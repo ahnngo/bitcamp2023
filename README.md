@@ -42,7 +42,29 @@ $ pip3 install -r requirements.txt
 ```
 
 ## :gear: Hardware Set Up
-To run this program, the user can use an arduino board or populate a breadboard. In either case, before running, make sure the correct port has been 
+### Arduino Board
+To run this program, you will need the following components connected to your Arduino board:
+
+- An LED connected to pin 13 (or the pin number specified by the "LED" variable in the code).
+- A speaker connected to pin 2 (or the pin number specified by the "SPEAKER" variable in the code).
+
+Make sure to properly connect these components to your Arduino board before uploading the code. Here is a breadboard for reference.
+
+### Port Setup
+
+Please note that the port used in this code may not be compatible with your computer. After uploading the code to the Arduino board, check which port it is using. Then, open the send_serial_testing.py file located in the same repository, and modify the first argument of the arduino = serial.Serial() function to match the port used by your Arduino board.
+
+For example, if your Arduino board is using port COM3 on Windows or /dev/tty.usbmodem14101 on macOS, change the following line in the send_serial_testing.py file:
+
+```
+arduino = serial.Serial('COM9', baudrate=9600, timeout=1)
+```
+to:
+```
+arduino = serial.Serial('COM3', baudrate=9600, timeout=1)
+```
+Save the changes to the send_serial_testing.py file and run it to test the code. If COM3 does not work for your computer, you can check which port the Arduino is connected to by opening the Arduino IDE, navigating to Tools > Port, and selecting the port that shows up when the Arduino is connected. Then, modify the arduino = serial.Serial() function in your Python script to use the selected port.
+
 
 ## 💻 Working
 
