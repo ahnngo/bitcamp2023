@@ -42,6 +42,7 @@ $ pip3 install -r requirements.txt
 ```
 
 ## :gear: Hardware Set Up
+To run this program, the user can use an arduino board or populate a breadboard. In either case, before running, make sure the correct port has been 
 
 ## 💻 Working
 
